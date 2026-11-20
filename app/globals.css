@@ -1,0 +1,227 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: #c83d35;
+  --color-primary-hover: #a9322c;
+  --color-secondary: #69b6df;
+  --color-background: #f5f6f7;
+  --color-foreground: #171717;
+  --color-muted: #626970;
+  --color-muted-foreground: #626970;
+  --color-border: #e1e4e7;
+  --color-card: #ffffff;
+  --color-dark-surface: #111315;
+  --color-white: #ffffff;
+  --color-charcoal: #111315;
+  --color-graphite: #25292d;
+  --color-light-surface: #ffffff;
+}
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    @apply border-border;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-background font-body text-foreground antialiased;
+    min-width: 320px;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-heading font-semibold tracking-tight;
+  }
+
+  a,
+  button,
+  input,
+  textarea,
+  select {
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2;
+  }
+
+  button,
+  a {
+    @apply touch-manipulation;
+  }
+}
+
+@layer components {
+  .container-content {
+    @apply mx-auto w-full max-w-content px-5 sm:px-8 lg:px-10;
+  }
+
+  .section-spacing {
+    @apply py-16 sm:py-20 lg:py-24;
+  }
+
+  .eyebrow {
+    @apply font-body text-sm font-semibold uppercase tracking-[0.16em] text-primary;
+  }
+
+  .section-heading {
+    @apply font-heading text-4xl font-semibold leading-none sm:text-5xl lg:text-6xl;
+  }
+
+  .button-primary {
+    @apply inline-flex min-h-11 items-center justify-center rounded-md bg-primary px-5 py-3 font-body text-sm font-semibold text-white transition-colors hover:bg-primary-hover;
+  }
+
+  /* Bold, sporty, slightly italic display headings from the reference design. */
+  .heading-display {
+    @apply font-heading font-extrabold uppercase italic leading-[0.9] tracking-tight text-foreground;
+  }
+
+  .button-on-dark {
+    @apply inline-flex min-h-11 items-center justify-center rounded-md border border-white/40 bg-transparent px-5 py-3 font-body text-sm font-semibold text-white transition-colors hover:border-white hover:bg-white hover:text-foreground;
+  }
+
+  .button-secondary {
+    @apply inline-flex min-h-11 items-center justify-center rounded-md border border-foreground bg-transparent px-5 py-3 font-body text-sm font-semibold text-foreground transition-colors hover:bg-foreground hover:text-white;
+  }
+
+  .field {
+    @apply min-h-11 w-full rounded-md border border-border bg-card px-3 py-2 font-body text-base text-foreground placeholder:text-muted-foreground focus:border-primary;
+  }
+}
+
+/* ---------- Section-specific visual treatments ---------- */
+@layer components {
+  /* Service cards: angled photo edge + red/blue sweep on hover */
+  .service-card-media {
+    clip-path: polygon(0 0, 100% 0, 100% 86%, 0 100%);
+  }
+
+  .card-sweep::after {
+    content: "";
+    position: absolute;
+    left: -12px;
+    bottom: 0;
+    height: 4px;
+    width: 0;
+    background: linear-gradient(90deg, var(--color-primary) 80%, var(--color-secondary) 80%);
+    transform: skewX(-35deg);
+    transition: width 0.35s ease;
+  }
+
+  .card-sweep:hover::after,
+  .card-sweep:focus-within::after {
+    width: calc(100% + 24px);
+  }
+
+  .outline-number {
+    color: transparent;
+    -webkit-text-stroke: 1.5px var(--color-primary);
+  }
+
+  /* Stretch a link over its whole card */
+  .stretched-link::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+  }
+
+  /* Fleet photo: slanted frame with offset red/blue shape */
+  .fleet-frame {
+    position: relative;
+  }
+
+  .fleet-frame::before {
+    content: "";
+    position: absolute;
+    inset: 14px -14px -14px 14px;
+    clip-path: polygon(12% 0, 100% 0, 88% 100%, 0 100%);
+    background: linear-gradient(135deg, var(--color-primary) 50%, var(--color-secondary) 50%);
+  }
+
+  .fleet-frame-image {
+    position: relative;
+    clip-path: polygon(12% 0, 100% 0, 88% 100%, 0 100%);
+  }
+
+  /* Specialty mosaic tiles */
+  .tile-description {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease, opacity 0.3s ease;
+  }
+
+  .tile:hover .tile-description,
+  .tile:focus-within .tile-description,
+  .tile-featured .tile-description {
+    max-height: 8rem;
+    opacity: 1;
+  }
+
+  @media (hover: none) {
+    .tile-description {
+      max-height: 8rem;
+      opacity: 1;
+    }
+  }
+
+  .tile-pattern {
+    background: repeating-linear-gradient(-55deg, #1b1e21 0 22px, #202428 22px 44px);
+  }
+}
+
+/* Scroll reveal: only hide content when JavaScript can reveal it again. */
+@media (scripting: enabled) {
+  .reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+@layer utilities {
+  .scrollbar-none {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
