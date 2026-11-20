@@ -39,7 +39,7 @@ export function Navbar() {
   }, [isOpen]);
 
   return (
-    <header className="relative z-50 border-b border-border bg-white">
+    <header className="sticky top-0 z-50 border-b border-border bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/90">
       <nav
         aria-label="Primary navigation"
         className="container-content flex min-h-20 items-center justify-between gap-6"
@@ -105,7 +105,7 @@ export function Navbar() {
 
       <div
         id="mobile-navigation"
-        className={`${isOpen ? "block" : "hidden"} border-t border-border bg-white lg:hidden`}
+        className={`${isOpen ? "block" : "hidden"} max-h-[calc(100dvh-5rem)] overflow-y-auto border-t border-border bg-white lg:hidden`}
       >
         <div className="container-content flex flex-col gap-1 py-4">
           {mainNavigation.map((item) => {

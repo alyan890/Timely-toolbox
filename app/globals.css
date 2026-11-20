@@ -28,6 +28,8 @@
 
   html {
     @apply scroll-smooth;
+    /* Keep jump-links (e.g. #appointment) clear of the sticky navbar. */
+    scroll-padding-top: 6rem;
   }
 
   body {
