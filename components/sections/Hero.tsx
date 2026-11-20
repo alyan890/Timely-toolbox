@@ -17,7 +17,7 @@ export function Hero() {
     props: { srcSet: mobileSrcSet }
   } = getImageProps({
     ...common,
-    src: "/images/Desert Muscle Car Poster.png",
+    src: "/images/hero-mobile.webp",
     width: 941,
     height: 1672,
     quality: 75
@@ -26,7 +26,7 @@ export function Hero() {
     props: { srcSet: desktopSrcSet, ...desktopImgProps }
   } = getImageProps({
     ...common,
-    src: "/images/Black Muscle Car in the Desert.png",
+    src: "/images/hero-desktop.webp",
     width: 1672,
     height: 941,
     quality: 75

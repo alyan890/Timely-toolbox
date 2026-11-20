@@ -1,5 +1,4 @@
 import type { ReactNode, SVGProps } from "react";
-import type { SpecialtyIconName } from "@/data/services";
 
 type IconProps = SVGProps<SVGSVGElement> & { size?: number };
 
@@ -106,43 +105,3 @@ export const PinIcon = ({ size = 16, ...props }: IconProps) => (
     <path d="M12 0C5.4 0 0 5.2 0 11.7 0 20.4 12 30 12 30s12-9.6 12-18.3C24 5.2 18.6 0 12 0Zm0 16a4.5 4.5 0 1 1 0-9 4.5 4.5 0 0 1 0 9Z" />
   </svg>
 );
-
-const specialtyPaths: Record<SpecialtyIconName, ReactNode> = {
-  build: <path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18v3h3l6.3-6.3a4 4 0 0 0 5.4-5.4l-2.6 2.6-2.4-.6-.6-2.4 2.6-2.6Z" />,
-  install: (
-    <>
-      <path d="M3 17h18M5 17l2-5h10l2 5" />
-      <path d="M12 3v6M9 6l3 3 3-3" />
-    </>
-  ),
-  weld: (
-    <>
-      <path d="M4 20 14 10M14 10l3-3 3 3-3 3-3-3Z" />
-      <path d="M7 6l1 2M4 9l2 1M10 4l.5 2" />
-    </>
-  ),
-  bolt: (
-    <>
-      <circle cx="12" cy="12" r="4" />
-      <path d="M12 2v4M12 18v4M2 12h4M18 12h4" />
-    </>
-  ),
-  motorcycle: (
-    <>
-      <circle cx="5" cy="16" r="3" />
-      <circle cx="19" cy="16" r="3" />
-      <path d="M5 16l4-7h5l3 7M12 9l2-3h3" />
-    </>
-  ),
-  tractor: (
-    <>
-      <circle cx="7" cy="16" r="4" />
-      <circle cx="18" cy="17" r="3" />
-      <path d="M7 12V6h6l2 6h3v5M3 12h8" />
-    </>
-  )
-};
-
-export function SpecialtyIcon({ name, ...props }: IconProps & { name: SpecialtyIconName }) {
-  return <Svg {...props}>{specialtyPaths[name]}</Svg>;
-}

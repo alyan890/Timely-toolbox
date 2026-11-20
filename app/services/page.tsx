@@ -29,8 +29,8 @@ const moreServices = [
     title: "Specialty Services",
     text: "Custom builds, aftermarket installations, welding, broken bolt extractions, plus motorcycle and tractor repairs.",
     href: "/specialty-services",
-    image: specialtyServices[0].image ?? "",
-    imageAlt: specialtyServices[0].imageAlt ?? ""
+    image: specialtyServices[0].image,
+    imageAlt: specialtyServices[0].imageAlt
   }
 ];
 
@@ -42,7 +42,7 @@ export default function ServicesPage() {
         eyebrow="Our Services"
         title="Complete Automotive Solutions"
         intro="Diagnosis first, then the right repair. Explore the services below or send a request describing what your vehicle is doing."
-        image="/images/Mechanic Performing Advanced Vehicle Diagnostics.png"
+        image="/images/service-diagnostics.webp"
         imageAlt="Technician using a diagnostic scan tool on a vehicle"
       >
         <Link href={appointmentHref} className="button-primary group gap-2">

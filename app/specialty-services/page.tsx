@@ -53,15 +53,13 @@ export default function SpecialtyServicesPage() {
               <div className="container-content grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
                 <Reveal className={reversed ? "lg:order-2" : ""}>
                   <div className="relative aspect-[3/2] overflow-hidden rounded-[10px] bg-graphite">
-                    {service.image ? (
-                      <Image
+                                          <Image
                         src={service.image}
-                        alt={service.imageAlt ?? ""}
+                        alt={service.imageAlt}
                         fill
                         sizes="(max-width: 1023px) 100vw, 50vw"
                         className="object-cover"
                       />
-                    ) : null}
                     {service.byAvailability ? (
                       <span className="absolute left-4 top-4 rounded bg-secondary px-2.5 py-1 font-body text-[11px] font-bold uppercase tracking-[0.08em] text-dark-surface">
                         By availability

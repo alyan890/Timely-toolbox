@@ -18,7 +18,7 @@ export function AboutPreview() {
       <div className="relative min-h-[320px]">
         <div className="absolute inset-0 [clip-path:polygon(0_0,100%_0,100%_88%,0_100%)] lg:[clip-path:polygon(0_0,90%_0,72%_100%,0_100%)]">
           <Image
-            src="/images/Focused Mechanic in a Modern Garage.png"
+            src="/images/about-mechanic.webp"
             alt="Technician working under the hood of a vehicle"
             fill
             sizes="(max-width: 1023px) 100vw, 55vw"

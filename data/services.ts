@@ -1,26 +1,9 @@
-export type ServiceIconName =
-  | "engine"
-  | "diagnostics"
-  | "electrical"
-  | "brakes"
-  | "suspension"
-  | "general";
-
-export type SpecialtyIconName =
-  | "build"
-  | "install"
-  | "weld"
-  | "bolt"
-  | "motorcycle"
-  | "tractor";
-
 export type MainService = {
   slug: string;
   title: string;
   /** Short label used in the six-icon bar. */
   shortTitle: string;
   href: string;
-  icon: ServiceIconName;
   image: string;
   imageAlt: string;
   /** Typical jobs shown as small tags on the card. */
@@ -32,10 +15,9 @@ export type SpecialtyService = {
   slug: string;
   title: string;
   href: string;
-  icon: SpecialtyIconName;
   description: string;
-  image?: string;
-  imageAlt?: string;
+  image: string;
+  imageAlt: string;
   byAvailability?: boolean;
   /** Tile size in the homepage mosaic. */
   tile: "featured" | "wide" | "standard";
@@ -47,8 +29,7 @@ export const mainServices: MainService[] = [
     title: "Engine Repair",
     shortTitle: "Engine Repair",
     href: "/services/engine-repair",
-    icon: "engine",
-    image: "/images/Precision Auto Repair in Action.png",
+    image: "/images/service-engine-repair.webp",
     imageAlt: "Technician tightening engine components under an open hood",
     tags: ["Check-engine lights", "Leaks", "Misfires"],
     description:
@@ -59,8 +40,7 @@ export const mainServices: MainService[] = [
     title: "Automotive Diagnostics",
     shortTitle: "Diagnostics",
     href: "/services/automotive-diagnostics",
-    icon: "diagnostics",
-    image: "/images/Mechanic Performing Advanced Vehicle Diagnostics.png",
+    image: "/images/service-diagnostics.webp",
     imageAlt: "Technician using a diagnostic scan tool on a vehicle",
     tags: ["Scan & test", "From $125", "General inspection"],
     description:
@@ -71,8 +51,7 @@ export const mainServices: MainService[] = [
     title: "Electrical Diagnostics & Repair",
     shortTitle: "Electrical Repair",
     href: "/services/electrical-repair",
-    icon: "electrical",
-    image: "/images/Precision Battery Diagnostics in the Workshop.png",
+    image: "/images/service-electrical.webp",
     imageAlt: "Technician testing a vehicle battery with a multimeter",
     tags: ["Starting & charging", "Wiring", "Batteries"],
     description:
@@ -83,8 +62,7 @@ export const mainServices: MainService[] = [
     title: "Brake Services",
     shortTitle: "Brakes",
     href: "/services/brake-services",
-    icon: "brakes",
-    image: "/images/Precision Brake Workshop Repair.png",
+    image: "/images/service-brakes.webp",
     imageAlt: "Technician working on a brake rotor and caliper",
     tags: ["Pads & rotors", "Calipers", "Brake fluid"],
     description:
@@ -95,8 +73,7 @@ export const mainServices: MainService[] = [
     title: "Suspension & Steering",
     shortTitle: "Suspension & Steering",
     href: "/services/suspension-steering",
-    icon: "suspension",
-    image: "/images/Precision Suspension Repair.png",
+    image: "/images/service-suspension.webp",
     imageAlt: "Technician repairing suspension components on a lifted vehicle",
     tags: ["Shocks & struts", "Ball joints", "Tie rods"],
     description:
@@ -107,8 +84,7 @@ export const mainServices: MainService[] = [
     title: "General Repair & Maintenance",
     shortTitle: "General Repair",
     href: "/services/general-automotive-repair",
-    icon: "general",
-    image: "/images/High-Performance Brake Parts Workshop Display.png",
+    image: "/images/service-general-repair.webp",
     imageAlt: "Brake rotor, caliper, pads and suspension parts laid out in the workshop",
     tags: ["Oil & fluids", "Belts & hoses", "Inspections"],
     description:
@@ -119,7 +95,7 @@ export const mainServices: MainService[] = [
 export const fleetService = {
   title: "Fleet Services & Maintenance Management",
   href: "/fleet-services",
-  image: "/images/Fleet Maintenance in Action.png",
+  image: "/images/fleet-services.webp",
   imageAlt: "Technician with a clipboard inspecting a row of fleet vans",
   description:
     "Repair and maintenance management for business vehicles, so your fleet spends less time down and more time on the job.",
@@ -138,8 +114,7 @@ export const specialtyServices: SpecialtyService[] = [
     slug: "custom-builds",
     title: "Custom Builds",
     href: "/specialty-services#custom-builds",
-    icon: "build",
-    image: "/images/Neon Garage Mustang Build.png",
+    image: "/images/specialty-custom-builds.webp",
     imageAlt: "Custom Mustang build in a garage",
     description:
       "Planning and building automotive projects with a custom direction, from concept to completion.",
@@ -149,8 +124,7 @@ export const specialtyServices: SpecialtyService[] = [
     slug: "aftermarket-installations",
     title: "Aftermarket Installations",
     href: "/specialty-services#aftermarket-installations",
-    icon: "install",
-    image: "/images/Focused Mechanic Fitting Carbon-Fiber Splitter.png",
+    image: "/images/specialty-aftermarket.webp",
     imageAlt: "Technician fitting a carbon-fiber front splitter",
     description:
       "Installing selected aftermarket parts and upgrades, done right the first time.",
@@ -160,8 +134,7 @@ export const specialtyServices: SpecialtyService[] = [
     slug: "welding-fabrication",
     title: "Welding & Fabrication",
     href: "/specialty-services#welding-fabrication",
-    icon: "weld",
-    image: "/images/High-Performance Turbo Parts Showcase.png",
+    image: "/images/specialty-welding.webp",
     imageAlt: "Welded stainless exhaust, turbo and intercooler parts in the workshop",
     description: "Fabrication and welding for repairs and custom projects.",
     tile: "standard"
@@ -170,8 +143,7 @@ export const specialtyServices: SpecialtyService[] = [
     slug: "broken-bolt-extractions",
     title: "Broken Bolt Extractions",
     href: "/specialty-services#broken-bolt-extractions",
-    icon: "bolt",
-    image: "/images/Rusty Bolt Extraction Workshop Close-Up.png",
+    image: "/images/specialty-bolt-extraction.webp",
     imageAlt: "Bolt extractor removing a rusted, broken bolt from an engine part",
     description: "Careful removal of broken and seized fasteners.",
     tile: "standard"
@@ -180,8 +152,7 @@ export const specialtyServices: SpecialtyService[] = [
     slug: "motorcycle-repairs",
     title: "Motorcycle Repairs",
     href: "/specialty-services#motorcycle-repairs",
-    icon: "motorcycle",
-    image: "/images/Motorcycle Parts on a Workshop Bench.png",
+    image: "/images/specialty-motorcycle.webp",
     imageAlt: "Motorcycle with brake rotor, shock and engine parts on a workshop bench",
     description: "Motorcycle repair, subject to scheduling availability.",
     byAvailability: true,
@@ -191,8 +162,7 @@ export const specialtyServices: SpecialtyService[] = [
     slug: "tractor-repairs",
     title: "Tractor Repairs",
     href: "/specialty-services#tractor-repairs",
-    icon: "tractor",
-    image: "/images/Sunset Tractor Parts Workshop.png",
+    image: "/images/specialty-tractor.webp",
     imageAlt: "Red farm tractor at sunset with alternator, starter and clutch parts",
     description: "Tractor repair, subject to scheduling availability.",
     byAvailability: true,

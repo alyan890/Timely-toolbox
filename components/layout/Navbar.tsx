@@ -51,10 +51,10 @@ export function Navbar() {
           onClick={() => setIsOpen(false)}
         >
           <Image
-            src="/images/TTT-badge-black-transparent.png"
+            src="/images/logo.png"
             alt="The Timely Toolbox"
             width={142}
-            height={112}
+            height={114}
             sizes="90px"
             className="h-14 w-auto object-contain sm:h-16"
             preload

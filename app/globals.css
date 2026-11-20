@@ -174,9 +174,6 @@
     }
   }
 
-  .tile-pattern {
-    background: repeating-linear-gradient(-55deg, #1b1e21 0 22px, #202428 22px 44px);
-  }
 }
 
 /* Scroll reveal: only hide content when JavaScript can reveal it again. */

@@ -46,7 +46,7 @@ export default function AboutPage() {
         eyebrow="About The Timely Toolbox"
         title="A Trusted Auto Repair Shop in Maricopa, AZ."
         intro="The Timely Toolbox is an appointment-based automotive repair and specialty services business. Every vehicle gets one-on-one attention, honest communication and careful work."
-        image="/images/Focused Mechanic in a Modern Garage.png"
+        image="/images/about-mechanic.webp"
         imageAlt="Technician working under the hood of a vehicle"
       >
         <Link href={appointmentHref} className="button-primary group gap-2">

@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import { SpecialtyIcon } from "@/components/ui/Icons";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { specialtyServices, type SpecialtyService } from "@/data/services";
@@ -16,26 +15,15 @@ function SpecialtyTile({ service }: { service: SpecialtyService }) {
 
   return (
     <article
-      className={`tile group relative isolate flex h-full min-h-[260px] items-end md:min-h-[220px] overflow-hidden rounded-[10px] text-white ${
-        service.image ? "bg-graphite" : "tile-pattern"
-      } ${isFeatured ? "tile-featured" : ""}`}
+      className={`tile group relative isolate flex h-full min-h-[260px] items-end md:min-h-[220px] overflow-hidden rounded-[10px] text-white bg-graphite ${isFeatured ? "tile-featured" : ""}`}
     >
-      {service.image ? (
-        <Image
+              <Image
           src={service.image}
-          alt={service.imageAlt ?? ""}
+          alt={service.imageAlt}
           fill
           sizes={isFeatured ? "(max-width: 1099px) 100vw, 50vw" : "(max-width: 767px) 100vw, (max-width: 1279px) 50vw, 50vw"}
           className="-z-20 object-cover transition-transform duration-700 ease-out group-hover:scale-105"
         />
-      ) : (
-        <SpecialtyIcon
-          name={service.icon}
-          size={72}
-          strokeWidth={1.5}
-          className="absolute left-1/2 top-1/2 -z-10 -translate-x-1/2 -translate-y-[70%] text-white/25"
-        />
-      )}
       {/* Two dark fades (bottom + left) keep the white text readable on any photo. */}
       <div
         className="absolute inset-0 -z-10 bg-[linear-gradient(to_top,rgb(17_19_21/0.97)_0%,rgb(17_19_21/0.86)_32%,rgb(17_19_21/0.35)_62%,rgb(17_19_21/0.08)_100%)]"

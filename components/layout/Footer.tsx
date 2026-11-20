@@ -16,10 +16,10 @@ export function Footer() {
           <Link href="/" className="inline-block rounded-sm" aria-label="The Timely Toolbox home">
             {/* The logo file is black; invert it for the dark footer. */}
             <Image
-              src="/images/TTT-badge-black-transparent.png"
+              src="/images/logo.png"
               alt="The Timely Toolbox"
               width={142}
-              height={112}
+              height={114}
               sizes="120px"
               className="h-20 w-auto object-contain invert"
             />
