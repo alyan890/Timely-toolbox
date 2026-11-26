@@ -20,6 +20,7 @@ function SpecialtyTile({ service }: { service: SpecialtyService }) {
               <Image
           src={service.image}
           alt={service.imageAlt}
+          style={service.imagePosition ? { objectPosition: service.imagePosition } : undefined}
           fill
           sizes={isFeatured ? "(max-width: 1099px) 100vw, 50vw" : "(max-width: 767px) 100vw, (max-width: 1279px) 50vw, 50vw"}
           className="-z-20 object-cover transition-transform duration-700 ease-out group-hover:scale-105"

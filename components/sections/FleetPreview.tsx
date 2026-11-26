@@ -46,6 +46,7 @@ export function FleetPreview() {
               <Image
                 src={fleetService.image}
                 alt={fleetService.imageAlt}
+                style={{ objectPosition: fleetService.imagePosition }}
                 fill
                 sizes="(max-width: 1023px) 100vw, 50vw"
                 className="object-cover"

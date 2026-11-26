@@ -17,9 +17,10 @@ export default function HomePage() {
       <Services />
       {/* Separate detailed service cards. */}
       <DetailedServices />
+      {/* Fleet work is a priority for the business: it comes right after the core services. */}
+      <FleetPreview />
       <HowItWorks />
       <AboutPreview />
-      <FleetPreview />
       <SpecialtyPreview />
       <WhyChooseUs />
       <ServiceArea />

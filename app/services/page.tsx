@@ -42,8 +42,8 @@ export default function ServicesPage() {
         eyebrow="Our Services"
         title="Complete Automotive Solutions"
         intro="Diagnosis first, then the right repair. Explore the services below or send a request describing what your vehicle is doing."
-        image="/images/service-diagnostics.webp"
-        imageAlt="Technician using a diagnostic scan tool on a vehicle"
+        image="/images/real-general-repair.webp"
+        imageAlt="Technician working under the hood of a red Lincoln"
       >
         <Link href={appointmentHref} className="button-primary group gap-2">
           Request an Appointment

@@ -15,7 +15,6 @@ const config: Config = {
         secondary: "var(--color-secondary)",
         background: "var(--color-background)",
         foreground: "var(--color-foreground)",
-        muted: "var(--color-muted)",
         "muted-foreground": "var(--color-muted-foreground)",
         border: "var(--color-border)",
         card: "var(--color-card)",

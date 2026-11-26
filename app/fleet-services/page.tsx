@@ -124,8 +124,8 @@ export default function FleetServicesPage() {
           <Reveal>
             <div className="relative aspect-[4/3] overflow-hidden rounded-[10px]">
               <Image
-                src="/images/service-engine-repair.webp"
-                alt="Technician working under the hood of a vehicle"
+                src="/images/owner-engine-work.webp"
+                alt="The owner working on an engine"
                 fill
                 sizes="(max-width: 1023px) 100vw, 50vw"
                 className="object-cover"

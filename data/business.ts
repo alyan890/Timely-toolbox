@@ -30,18 +30,18 @@ export const business = {
   // Confirmed service areas only. Add nearby cities once the owner confirms them.
   serviceAreas: ["Maricopa, AZ"],
 
-  // Reported by the owner. Exact certification areas, years and dealer
-  // details still need confirming before adding specifics or logos.
+  // Verified from photos the owner supplied (award plaques, Ford/Lincoln
+  // training certificates, ASE certificate). Ask before adding logos.
   trustPoints: [
     {
       icon: "medal",
       title: "ASE Certified",
-      text: "Certified training applied to every repair."
+      text: "Certified by the National Institute for Automotive Service Excellence."
     },
     {
       icon: "building",
-      title: "Dealer Trained",
-      text: "Dealer-level training and repair procedures."
+      title: "Ford & Lincoln Trained",
+      text: "Dealer technical training, from engine fundamentals to high-voltage systems."
     },
     {
       icon: "pulse",
@@ -54,6 +54,13 @@ export const business = {
       text: "Clear estimates and no surprise work."
     }
   ],
+
+  // Crème de la Copa, Kramer Media (Maricopa community vote).
+  awards: {
+    title: "Voted Top 3 Best Automotive Repair",
+    years: "2025 & 2026",
+    source: "Crème de la Copa, voted by the Maricopa community"
+  },
 
   pricing: {
     laborRatePerHour: 125,

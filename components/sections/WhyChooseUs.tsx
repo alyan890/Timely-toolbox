@@ -1,3 +1,4 @@
+import Image from "next/image";
 import {
   BuildingIcon,
   HeartIcon,
@@ -33,7 +34,43 @@ export function WhyChooseUs() {
         <Reveal>
           <SectionHeading id="why-heading" eyebrow="Why Choose Us" title="Done Right. Explained Clearly." />
         </Reveal>
-        <ul className="mt-12 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+        {/* Award feature: real plaques and training certificates from the owner */}
+        <Reveal className="mt-12">
+          <div className="grid overflow-hidden rounded-[12px] bg-dark-surface text-white lg:grid-cols-[1.1fr_1fr]">
+            <div className="relative min-h-[260px] sm:min-h-[340px]">
+              <Image
+                src="/images/awards-and-certifications.webp"
+                alt="Crème de la Copa 2025 and 2026 award plaques with Ford and Lincoln training certificates and an ASE certificate"
+                fill
+                sizes="(max-width: 1023px) 100vw, 55vw"
+                className="object-cover lg:[clip-path:polygon(0_0,100%_0,90%_100%,0_100%)]"
+              />
+            </div>
+            <div className="relative flex flex-col justify-center p-7 sm:p-10">
+              <span
+                className="absolute right-6 top-0 hidden h-full w-3 -skew-x-[20deg] bg-primary sm:block"
+                aria-hidden="true"
+              />
+              <span
+                className="absolute right-12 top-0 hidden h-full w-1.5 -skew-x-[20deg] bg-secondary sm:block"
+                aria-hidden="true"
+              />
+              <p className="inline-flex w-fit items-center gap-2 rounded bg-primary px-3 py-1.5 font-body text-xs font-bold uppercase tracking-[0.12em]">
+                <MedalIcon size={16} />
+                {business.awards.years}
+              </p>
+              <h3 className="heading-display mt-5 max-w-md pr-10 text-[2.25rem] text-white sm:text-[2.75rem]">
+                {business.awards.title}
+              </h3>
+              <p className="mt-4 max-w-md pr-10 font-body text-base leading-7 text-white/75">
+                {business.awards.source}, two years in a row, and backed by ASE certification and Ford &amp;
+                Lincoln dealer training.
+              </p>
+            </div>
+          </div>
+        </Reveal>
+
+        <ul className="mt-6 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
           {business.trustPoints.map((point, index) => {
             const Icon = icons[point.icon];
             return (

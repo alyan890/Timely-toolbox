@@ -56,6 +56,7 @@ export default function SpecialtyServicesPage() {
                                           <Image
                         src={service.image}
                         alt={service.imageAlt}
+          style={service.imagePosition ? { objectPosition: service.imagePosition } : undefined}
                         fill
                         sizes="(max-width: 1023px) 100vw, 50vw"
                         className="object-cover"

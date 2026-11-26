@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { HowItWorks } from "@/components/sections/HowItWorks";
 import { WhyChooseUs } from "@/components/sections/WhyChooseUs";
@@ -7,6 +8,7 @@ import { CalendarCheckIcon, ChatIcon, CheckIcon, PulseIcon } from "@/components/
 import { PageHero } from "@/components/ui/PageHero";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { business } from "@/data/business";
 import { appointmentHref } from "@/data/navigation";
 
 export const metadata: Metadata = {
@@ -46,8 +48,8 @@ export default function AboutPage() {
         eyebrow="About The Timely Toolbox"
         title="A Trusted Auto Repair Shop in Maricopa, AZ."
         intro="The Timely Toolbox is an appointment-based automotive repair and specialty services business. Every vehicle gets one-on-one attention, honest communication and careful work."
-        image="/images/about-mechanic.webp"
-        imageAlt="Technician working under the hood of a vehicle"
+        image="/images/owner-engine-work.webp"
+        imageAlt="The owner working on an engine with tools laid out on the fender"
       >
         <Link href={appointmentHref} className="button-primary group gap-2">
           Request an Appointment
@@ -64,6 +66,20 @@ export default function AboutPage() {
               eyebrow="Our Story"
               title="Personal Service, Done Right."
             />
+            <figure className="mt-8 max-w-md">
+              <div className="relative aspect-[4/5] overflow-hidden rounded-[10px] bg-graphite">
+                <Image
+                  src="/images/award-creme-de-la-copa-2025.webp"
+                  alt="Crème de la Copa 2025 plaque: The Timely Toolbox LLC voted Top 3 Best Automotive Repair by the Maricopa community"
+                  fill
+                  sizes="(max-width: 1023px) 100vw, 28rem"
+                  className="object-cover"
+                />
+              </div>
+              <figcaption className="mt-3 font-body text-sm text-muted-foreground">
+                {business.awards.title}, {business.awards.years}. {business.awards.source}.
+              </figcaption>
+            </figure>
           </Reveal>
           <Reveal delay={100}>
             <div className="space-y-5 font-body text-base leading-8 text-muted-foreground">
